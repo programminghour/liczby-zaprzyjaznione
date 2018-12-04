@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int suma(int li)
+{
+    int suma=1;
+    for(int i=2;i<=li/2;i++)
+        if(li%i==0)
+            suma=suma+i;
+    return suma;
+}
+
+bool zaprz(int li1, int li2)
+{
+
+        return (suma(li1)==li2 && suma(li2)==li1);
+
+}
+
+int main()
+{
+    int liczba1 = 0, liczba2 = 0;
+
+    cout << "podaj liczbe1:";
+    cin >> liczba1;
+
+    cout << "podaj liczbe2:";
+    cin >> liczba2;
+
+    if(zaprz(liczba1,liczba2))
+        cout<< "Sa zaprzyjazione";
+    else
+        cout << "Nie zaprzyjaznione";
+
+    return 0;
+}
